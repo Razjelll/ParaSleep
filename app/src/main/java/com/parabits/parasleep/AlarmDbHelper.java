@@ -14,7 +14,8 @@ public class AlarmDbHelper extends SQLiteOpenHelper{
     private final String CREATE_STATEMENT = "CREATE TABLE alarms ( id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "hour INTEGER NOT NULL, " +
             "minutes INTEGER NOT NULL, "+
-            "enabled INTEGER NOT NULL DEFAULT 1)";
+            "enabled INTEGER NOT NULL DEFAULT 1, " +
+            "days INTEGER NOT NULL DEFAULT 1)";
 
     public AlarmDbHelper(Context context)
     {

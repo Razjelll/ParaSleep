@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">ParaSleep</string>
+    <string name="title_activity_edit_alarm">EditAlarmActivity</string>
+
+    <string name="alarm_name">Nazwa budzika</string>
+    <string name="save">Zapisz</string>
+    <string name="edit">Edytuj alarm</string>
+    <string name="turn_on">Włącz alarm</string>
+    <string name="turn_off">Wyłącz alarm</string>
+    <string name="delete">Usuń alarm</string>
+
+    <string name="deleting_alarm_success">Usunięto alarm</string>
+    <string name="deleting_alarm_failed">Wystąpił błąd podczas usuwania alarmu</string>
+
+    <string name="deleting_alarm_title">Usuwanie budzika</string>
+    <string name="sure_deleting_alerm">Czy na pewno usunąć alarm</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="cancel">Anuluj</string>
+
+    <string name="monday_abbr">Pon</string>
+    <string name="tuesday_abbr">Wt</string>
+    <string name="wednesday_abbr">Śr</string>
+    <string name="thursday_abbr">Czw</string>
+    <string name="friday_abbr">Pt</string>
+    <string name="saturday_abbr">Sob</string>
+    <string name="sunday_abbr">Nied</string>
+
+    <string-array name="days_of_the_week_abbr">
+        <item>@string/monday_abbr</item>
+        <item>@string/tuesday_abbr</item>
+        <item>@string/wednesday_abbr</item>
+        <item>@string/thursday_abbr</item>
+        <item>@string/friday_abbr</item>
+        <item>@string/saturday_abbr</item>
+        <item>@string/sunday_abbr</item>
+    </string-array>
+
+
 </resources>

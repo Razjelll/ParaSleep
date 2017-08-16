@@ -1,46 +1,77 @@
 package com.parabits.parasleep;
 
-public class Time {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private int mHours;
-    private int mMinutes;
+public class Time implements Parcelable{
+
+    private int mHour;
+    private int mMinute;
 
     public Time(int hours, int minutes)
     {
-        mHours = hours;
-        mMinutes = minutes;
+        mHour = hours;
+        mMinute = minutes;
     }
 
-    public int getHours() {return mHours;}
-    public void setHours(int hours) {
-        if(hours >=0 && hours <=24)
+    protected Time(Parcel in) {
+        mHour = in.readInt();
+        mMinute = in.readInt();
+    }
+
+    public static final Creator<Time> CREATOR = new Creator<Time>() {
+        @Override
+        public Time createFromParcel(Parcel in) {
+            return new Time(in);
+        }
+
+        @Override
+        public Time[] newArray(int size) {
+            return new Time[size];
+        }
+    };
+
+    public int getHour() {return mHour;}
+    public void setHours(int hour) {
+        if(hour >=0 && hour <=24)
         {
-            mHours = hours;
+            mHour = hour;
         }
     }
-    public int getMinutes() {return mMinutes;}
-    public void setMinutes(int minutes)
+    public int getMinute() {return mMinute;}
+    public void setMinutes(int minute)
     {
-        if(minutes >= 0 && minutes <= 60)
+        if(minute >= 0 && minute <= 60)
         {
-            mMinutes = minutes;
+            mMinute = minute;
         }
     }
 
     @Override
     public String toString()
     {
-        String hours = String.valueOf(mHours);
-        if(mHours < 10 )
+        String hour = String.valueOf(mHour);
+        if(mHour < 10 )
         {
-            hours = "0" + hours;
+            hour = "0" + hour;
         }
-        String minutes = String.valueOf(mMinutes);
-        if(mMinutes < 10)
+        String minute = String.valueOf(mMinute);
+        if(mMinute < 10)
         {
-            minutes = "0" + minutes;
+            minute = "0" + minute;
         }
 
-        return hours + ":" + minutes;
+        return hour + ":" + minute;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(mHour);
+        parcel.writeInt(mMinute);
     }
 }

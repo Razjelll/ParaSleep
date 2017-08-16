@@ -20,10 +20,11 @@ public class AlarmDao {
     public void add(Alarm alarm)
     {
         ContentValues values = new ContentValues();
-        values.put(AlarmTable.HOUR_COLUMN, alarm.getTime().getHours());
-        values.put(AlarmTable.MINUTES_COLUMN, alarm.getTime().getMinutes());
+        values.put(AlarmTable.HOUR_COLUMN, alarm.getTime().getHour());
+        values.put(AlarmTable.MINUTES_COLUMN, alarm.getTime().getMinute());
         values.put(AlarmTable.ENABLED_COLUMN, SQLiteUtils.getInt(alarm.isEnabled()));
-
+        int daysValue = DaysDbUtils.getValue(alarm.getEnabledDays());
+        values.put(AlarmTable.DAYS_COLUMN, daysValue);
         mDb.insert(AlarmTable.TABLE_NAME, null, values);
     }
 

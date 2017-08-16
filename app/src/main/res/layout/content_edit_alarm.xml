@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.parabits.parasleep.EditAlarmActivity"
+    tools:showIn="@layout/activity_edit_alarm">
+
+    <EditText android:id="@+id/alarm_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/alarm_name"/>
+    <TimePicker android:id="@+id/alarm_time_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_enable_button"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="0dp"
+        android:minWidth="0dp"
+        >
+
+        <Button style="@style/DayButtonStyle"
+            android:id="@+id/monday_button"
+            android:layout_weight="1"
+            android:text="@string/monday_abbr"
+            />
+        <Button android:id="@+id/tuesday_button"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/tuesday_abbr" />
+
+        <Button android:id="@+id/wednesdey_button"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/wednesday_abbr" />
+        <Button android:id="@+id/thursday_button"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/thursday_abbr" />
+        <Button android:id="@+id/friday_button"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/friday_abbr" />
+        <Button android:id="@+id/saturday_button"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/saturday_abbr" />
+        <Button android:id="@+id/sunday_button"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/sunday_abbr" />
+    </LinearLayout>
+
+    <Button android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_margin="@dimen/margin"/>
+
+
+</LinearLayout>
